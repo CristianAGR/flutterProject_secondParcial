@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_segundo/helpers/formValidation.dart';
 import './widgets/inputField.dart';
 
 class UserScreen extends StatelessWidget {
-  const UserScreen({Key? key}) : super(key: key);
-
+  UserScreen({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
   void _addSale(String item) {}
 
   @override
@@ -13,18 +14,25 @@ class UserScreen extends StatelessWidget {
           title: const Text("User"),
         ),
         body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
-              InputField(text: "Id"),
-              InputField(text: "Name"),
-              InputField(text: "Lastname"),
-              InputField(text: "Age"),
-              InputField(text: "Gender"),
-              InputField(text: "Email/user"),
-              InputField(text: "Password"),
-              InputField(text: "Rol"),
-              ElevatedButton(onPressed: () {}, child: const Text("Alta"))
+              Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InputField(text: "Id"),
+                  InputField(text: "Name"),
+                  InputField(text: "Lastname"),
+                  InputField(text: "Age"),
+                  InputField(text: "Gender"),
+                  InputField(text: "Email/user"),
+                  InputField(text: "Password"),
+                  InputField(text: "Rol"),
+                  ElevatedButton(onPressed: () => validation(context, '', _formKey), child: const Text("Alta"))
+                ],
+              ),
+            ),
             ],
           ),
         ));
