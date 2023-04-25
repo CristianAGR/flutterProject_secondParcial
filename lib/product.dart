@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import './widgets/inputField.dart';
+import 'helpers/formValidation.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+  ProductScreen({Key? key}) : super(key: key);
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +16,21 @@ class ProductScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          InputField(text: "ID"),
-          InputField(text: "Name"),
-          InputField(text: "Descrption"),
-          InputField(text: "Units"),
-          InputField(text: "Cost"),
-          InputField(text: "Price"),
-          InputField(text: "Utility")
-        ]),
+        child: ListView(
+          children: [Form(
+            key: _formKey,
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              InputField(text: "ID"),
+              InputField(text: "Name"),
+              InputField(text: "Descrption"),
+              InputField(text: "Units"),
+              InputField(text: "Cost"),
+              InputField(text: "Price"),
+              InputField(text: "Utility"),
+              ElevatedButton(onPressed: () => validation(context, '', _formKey), child: const Text("Alta"))
+            ]),
+          ),]
+        ),
       ),
     );
   }
