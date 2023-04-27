@@ -21,9 +21,9 @@ class PurchaseScreen extends StatelessWidget {
             key: _formKey,
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
              children: [
-              InputField(text: "IdProduct"),
+              InputField(text: "IdProduct", type: "number",),
               InputField(text: "Name"),
-              InputField(text: "Pieces"),
+              InputField(text: "Pieces", type: "number",),
               InputField(text: "IDA"),
               ElevatedButton(onPressed: () => validation(context, '', _formKey), child: const Text("Venta"))
             ]),

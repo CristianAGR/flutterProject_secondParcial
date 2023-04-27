@@ -23,7 +23,7 @@ class ScreenLogin extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const InputField(text: "Username"),
-              const InputField(text: "Password"),
+              const InputField(text: "Password", type: "pass",),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 40)),

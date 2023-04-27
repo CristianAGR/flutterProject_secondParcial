@@ -20,12 +20,12 @@ class ProductScreen extends StatelessWidget {
           children: [Form(
             key: _formKey,
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              InputField(text: "ID"),
+              InputField(text: "ID", type: "number",),
               InputField(text: "Name"),
               InputField(text: "Descrption"),
-              InputField(text: "Units"),
-              InputField(text: "Cost"),
-              InputField(text: "Price"),
+              InputField(text: "Units", type: "number",),
+              InputField(text: "Cost", type: "number",),
+              InputField(text: "Price", type: "number",),
               InputField(text: "Utility"),
               ElevatedButton(onPressed: () => validation(context, '', _formKey), child: const Text("Alta"))
             ]),

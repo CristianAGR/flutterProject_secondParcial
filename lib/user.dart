@@ -21,12 +21,12 @@ class UserScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  InputField(text: "Id"),
+                  InputField(text: "Id", type: "number",),
                   InputField(text: "Name"),
                   InputField(text: "Lastname"),
-                  InputField(text: "Age"),
+                  InputField(text: "Age", type: "number",),
                   InputField(text: "Gender"),
-                  InputField(text: "Email/user"),
+                  InputField(text: "Email/user", type: "email",),
                   InputField(text: "Password"),
                   InputField(text: "Rol"),
                   ElevatedButton(onPressed: () => validation(context, '', _formKey), child: const Text("Alta"))
